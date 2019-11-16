@@ -5,10 +5,9 @@ $headers = array();
 $headers[] = 'Content-Type: application/json';
 $headers[] = 'X-AppVersion: 3.27.0';
 $headers[] = "X-Uniqueid: ac94e5d0e7f3f".rand(111,999);
-$headers[] = 'X-Location: -6.405821,106.064193';
+$headers[] = 'X-Location: -6.405821,106.064'.rand(111,999);
 		
-		echo "[+] Proxy : ";
-		$proxy = trim(fgets(STDIN));
+		
 		
 		echo "[+] Nomer Yang Ingin Di Claim : ";
 		$number = trim(fgets(STDIN));
@@ -88,15 +87,12 @@ If ($claims->data->message != ""){
 
 function curl($url, $fields = null, $headers = null)
     {
-	global $proxy;
+	
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	curl_setopt($ch, CURLOPT_PROXY, $proxy);
-	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0); 
-	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-
+	
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         if ($fields !== null) {
             curl_setopt($ch, CURLOPT_POST, 1);
