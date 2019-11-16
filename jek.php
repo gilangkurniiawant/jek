@@ -79,6 +79,7 @@ If ($claims->data->message != ""){
 	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		
 	$ex = curl_exec($ch);
 	// $rand = json_decode($rnd_get, true);
 	preg_match_all('~(&bull; (.*?)<br/>&bull; )~', $ex, $name);
@@ -93,6 +94,9 @@ function curl($url, $fields = null, $headers = null)
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	curl_setopt($ch, CURLOPT_PROXY, $proxy);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0); 
+	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         if ($fields !== null) {
             curl_setopt($ch, CURLOPT_POST, 1);
