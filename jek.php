@@ -2,17 +2,17 @@
 $secret = '83415d06-ec4e-11e6-a41b-6c40088ab51e';
 
 $headers = array();
-$header[] = "Host: api.gojekapi.com";
-$header[] = "User-Agent: okhttp/3.10.0";
-$header[] = "Accept: application/json";
-$header[] = "Accept-Language: en-ID";
-$header[] = "Content-Type: application/json; charset=UTF-8";
-$header[] = "X-AppVersion: 3.16.1";
-$header[] = "X-UniqueId: 106".mt_rand(1000,9999)."982657".mt_rand(1000,9999);
-$header[] = "Connection: keep-alive";    
-$header[] = "X-User-Locale: en_ID";
-$header[] = "X-Location: -6.147244,106.836".mt_rand(1000,9999);
-$header[] = "X-Location-Accuracy: 3.0";
+$headers[] = "Host: api.gojekapi.com";
+$headers[] = "User-Agent: okhttp/3.10.0";
+$headers[] = "Accept: application/json";
+$headers[] = "Accept-Language: en-ID";
+$headers[] = "Content-Type: application/json; charset=UTF-8";
+$headers[] = "X-AppVersion: 3.16.1";
+$headers[] = "X-UniqueId: 106".mt_rand(1000,9999)."982657".mt_rand(1000,9999);
+$headers[] = "Connection: keep-alive";    
+$headers[] = "X-User-Locale: en_ID";
+$headers[] = "X-Location: -6.147244,106.836".mt_rand(1000,9999);
+$headers[] = "X-Location-Accuracy: 3.0";
 		
 		
 		
